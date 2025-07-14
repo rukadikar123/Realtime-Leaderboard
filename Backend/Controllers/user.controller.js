@@ -83,6 +83,21 @@ export const claimPoints = async (req, res) => {
       userId,
       points,
     });
+
+    const io = req.app.get("io");
+
+    const users = await User.find().sort({ totalPoints: -1 });
+    const leaderboard = users.map((user, index) => ({
+      name: user.name,
+      totalPoints: user.totalPoints,
+      rank: index + 1,
+    }));
+    io.emit("leaderboardUpdate", leaderboard);
+
+    return res.status(200).json({
+        success:true,
+        points
+    })
   } catch (error) {
     console.log(`claimPoints error : ${error}`);
 
@@ -140,7 +155,7 @@ export const getClaimHitsory = async (req, res) => {
       claimedAt: -1,
     });
 
-    if (claimHistory.length===0) {
+    if (claimHistory.length === 0) {
       return res.status(400).json({
         success: false,
         message: "no claim history found",
@@ -150,7 +165,7 @@ export const getClaimHitsory = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "Fetched claim history successfully.",
-      claimHistory
+      claimHistory,
     });
   } catch (error) {
     console.log(`getClaimHitsory error : ${error}`);
