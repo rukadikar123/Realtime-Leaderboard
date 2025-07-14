@@ -6,7 +6,7 @@ const ClaimHistorySchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
-    Points:{
+    points:{
         type:Number,
     },
     claimedAt:{
@@ -18,4 +18,4 @@ const ClaimHistorySchema=mongoose.Schema({
 
 let ClaimHistory=mongoose.model("ClaimHistory",ClaimHistorySchema)
 
-export default User
+export default ClaimHistory
