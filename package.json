@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Node js leaderBoard app",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon Backend/index.js"
@@ -18,6 +19,7 @@
     "express": "^5.1.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.3",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "socket.io": "^4.8.1"
   }
 }
