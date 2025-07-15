@@ -3,6 +3,7 @@ import { addUser, claimPoints, getClaimHitsory, getLeaderBoard, getUsers } from 
 
 const router=Router()
 
+// User Routes
 router.get("/users",getUsers)
 router.post("/addUser",addUser)
 router.post("/claim/:userId",claimPoints)

@@ -1,12 +1,52 @@
-# React + Vite
+# Leaderboard Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Leaderboard application, built with React and Tailwind CSS. It displays a real-time leaderboard, allows users to claim points, view claim history, and add new users.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Leaderboard:** Shows ranked users and their points.
+- **Add User:** Add new users to the leaderboard.
+- **Claim Points:** Claim random points for any user.
+- **Claim History:** View the history of claimed points for each user.
+- **Real-time Updates:** Leaderboard updates instantly via Socket.IO.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm 
+
+### Installation
+
+```bash
+cd Frontend
+npm install
+```
+
+
+
+### Running the App
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Project Structure
+
+- `src/Components/LeaderBoard.jsx` — Leaderboard UI
+- `src/Components/AddUser.jsx` — Add user form
+- `src/Components/UserList.jsx` — User list and claim actions
+- `src/Components/ClaimHistory.jsx` — User claim history
+- `src/socket.js` — Socket.IO client setup
+- `src/App.jsx` — Main app logic and routing
+
+## Technologies Used
+
+- React
+- Tailwind CSS
+- Axios
+- Socket.IO
+- React Router

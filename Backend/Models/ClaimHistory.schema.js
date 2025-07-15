@@ -1,21 +1,25 @@
 import mongoose from "mongoose";
 
-const ClaimHistorySchema=mongoose.Schema({
-
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
+// Define the schema for ClaimHistory
+const ClaimHistorySchema = mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    points:{
-        type:Number,
+    points: {
+      type: Number,
     },
-    claimedAt:{
-        type:Date,
-        default:Date.now
-    }
+    claimedAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  { timestamps: true }
+);
 
-},{timestamps:true})
+// Create the ClaimHistory model from the schema
+let ClaimHistory = mongoose.model("ClaimHistory", ClaimHistorySchema);
 
-let ClaimHistory=mongoose.model("ClaimHistory",ClaimHistorySchema)
-
-export default ClaimHistory
+// Export the model for use in other parts of the app
+export default ClaimHistory;
