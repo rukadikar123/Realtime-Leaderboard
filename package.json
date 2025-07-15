@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon Backend/index.js"
+    "dev": "node Backend/index.js"
   },
   "keywords": [
     "Backend"
