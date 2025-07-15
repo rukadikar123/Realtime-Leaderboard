@@ -2,6 +2,7 @@ import LeaderBoard from "./Components/LeaderBoard";
 import AddUser from "./Components/AddUser";
 import UserList from "./Components/UserList";
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import axios from "axios";
 import socket from "./socket"; // Import socket instance (Socket.IO client)
 
@@ -56,7 +57,9 @@ function App() {
       <div className="flex-1 overflow-y-auto px-4 pb-4">
         <UserList users={users} />
       </div>
+      <ToastContainer/>
     </div>
+
   );
 }
 

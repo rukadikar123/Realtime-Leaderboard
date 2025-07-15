@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 // AddUser component allows adding a new user
 function AddUser({ onUserAdded }) {
@@ -16,6 +17,7 @@ function AddUser({ onUserAdded }) {
       });
       setName(""); // Clear the input field after successful user creation
       onUserAdded?.(); // Refresh user list
+      toast.success("User added successfully");
     } catch (err) {
       console.error("Error adding user", err);
     }

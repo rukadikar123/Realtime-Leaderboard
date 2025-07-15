@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUsers } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 // UserList component receives a list of users as a prop
 function UserList({ users }) {
@@ -12,6 +13,7 @@ function UserList({ users }) {
         `${import.meta.env.VITE_BASE_URL}/api/claim/${userId}`
       );
       console.log("Claimed points:", res?.data?.points);
+      toast.success("Claimed  points!");
     } catch (err) {
       console.error("Error claiming points", err);
     }
