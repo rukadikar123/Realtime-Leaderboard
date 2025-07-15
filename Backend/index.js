@@ -18,7 +18,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO server with CORS configuration
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Frontend URL allowed to connect
+    origin: "https://realtime-leaderboard-frontend.onrender.com", // Frontend URL allowed to connect
     methods: ["POST", "GET"], // Allowed HTTP methods
   },
 });
@@ -31,7 +31,7 @@ app.set("io", io);
 // Enable CORS for frontend
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://realtime-leaderboard-frontend.onrender.com",
   })
 );
 app.use(express.json()); // Parse incoming JSON request bodies

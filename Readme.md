@@ -41,7 +41,7 @@ This project is a full-stack real-time leaderboard system, featuring a React fro
    ```
 
 4. **Access the app:**  
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
+   Open [https://realtime-leaderboard-frontend.onrender.com](https://realtime-leaderboard-frontend.onrender.com) in your browser.
 
 ## Main Features
 
