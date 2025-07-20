@@ -7,7 +7,7 @@ export const getUsers = async (req, res) => {
     // Fetch all user documents from the User collection
     const users = await User.find();
     // If no users are found, return a 400 error response
-    if (!users) {
+    if (users.length === 0) {
       return res.status(400).json({
         success: false,
         message: "No user Found",
@@ -104,6 +104,12 @@ export const claimPoints = async (req, res) => {
 
     // Fetch all users, sorted by totalPoints in descending order
     const users = await User.find().sort({ totalPoints: -1 });
+    if (users.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "No users to generate leaderboard",
+      });
+    }
     // Generate leaderboard with rank based on sorted position
     const leaderboard = users.map((user, index) => ({
       name: user.name,
