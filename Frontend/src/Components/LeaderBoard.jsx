@@ -49,7 +49,7 @@ function LeaderBoard({ leaderBoard }) {
       </h2>
       {/* Display current page users */}
       <div className="flex flex-wrap justify-center gap-4">
-        {visibleUsers.map((user, index) => (
+        {visibleUsers?.map((user, index) => (
           <div
             key={index}
             className="bg-[#152b76] rounded-lg cursor-pointer transition transform duration-300 hover:scale-105  md:px-4 md:py-2 py-1 flex flex-col items-center gap-2 w-[125px] md:w-[160px]"
@@ -70,7 +70,7 @@ function LeaderBoard({ leaderBoard }) {
               {user?.totalPoints} pts
             </span>
           </div>
-        ))}
+        ))} 
       </div>
       {/* Pagination Controls */}
       <div className="flex justify-center gap-4 mt-4">
@@ -95,22 +95,3 @@ function LeaderBoard({ leaderBoard }) {
 
 export default LeaderBoard;
 
-{
-  /*
-  
-  <div className="flex flex-wrap gap-4 justify-center">
-        {visibleUsers.map((user, index) => (
-          <div
-            key={index}
-            className="bg-[#152b76] rounded-lg cursor-pointer transition transform duration-300 hover:scale-105 px-6 py-3 gap-2 flex flex-col items-center min-w-[140px]"
-          >
-            <div className="rounded-full h-14 w-14 bg-[#f98a20] "><FaUserAlt size={20} className="relative top-4 left-[18px]  text-white"/></div>
-            <span className="font-semibold text-[#e5f0fe] capitalize text-center">
-              #{user?.rank} {user?.name}
-            </span>
-            <span className="text-[#d6fcf9] bg-[#1ec4a9] px-4 py-1 rounded-xl text-sm">{user?.totalPoints} pts</span>
-          </div>
-        ))}
-        
-      </div> */
-}
